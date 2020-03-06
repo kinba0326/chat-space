@@ -26,19 +26,21 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|username|string|null: false|
+|name|string|null: false, index: true|
 |email|string|null: false|
 |password|string|null: false|
 ### Association
 - has_many :messages
-- has_many :groups_users,  through:  :groups
+- has_many :groups_users
+- has_many :groups,  through:  :groups_users
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text||
 |image|string||
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :group
@@ -46,8 +48,8 @@ Things you may want to cover:
 ## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :group
 - belongs_to :user
@@ -55,8 +57,8 @@ Things you may want to cover:
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|text|null: false|
-|message_id|integer|null: false, foreign_key: true|
+|name|text|null: false|
 ### Association
 - has_many :messages
-- has_many :groups_users,  through:  :users
+- has_many :groups_users
+- has_many :users,  through:  :groups_users
