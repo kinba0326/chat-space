@@ -1,0 +1,16 @@
+.side-bar
+  .side-bar__side-header
+    .side-header__box
+      .box__user-name masa
+      .box__menu
+        .menu__new 
+        = link_to "#", class: "new__edit-btn" do
+          = icon('fa', 'edit')
+        .menu__edit 
+        = link_to "#", class: "edit__cog-btn" do
+          = icon('fa', 'cog')
+  .side-bar__groups
+    .groups__group
+      .group__group-name    techcamp
+      .group__message   まだメッセージがありません
+
