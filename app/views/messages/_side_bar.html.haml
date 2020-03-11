@@ -1,14 +1,15 @@
 .side-bar
   .side-bar__side-header
     .side-header__box
-      .box__user-name masa
+      .box__user-name 
+        = current_user.name
       .box__menu
         .menu__new 
         = link_to "#", class: "new__edit-btn" do
           = icon('fa', 'edit')
         .menu__edit 
-        = link_to "#", class: "edit__cog-btn" do
-          = icon('fa', 'cog')
+        = link_to edit_user_path(current_user) do
+          = icon('fa', 'cog', class: 'icon')
   .side-bar__groups
     .groups__group
       .group__group-name    techcamp
