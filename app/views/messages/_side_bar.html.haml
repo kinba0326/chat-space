@@ -5,13 +5,17 @@
         = current_user.name
       .box__menu
         .menu__new 
-        = link_to "#", class: "new__edit-btn" do
+        = link_to new_group_path do
           = icon('fa', 'edit')
         .menu__edit 
         = link_to edit_user_path(current_user) do
           = icon('fa', 'cog', class: 'icon')
   .side-bar__groups
-    .groups__group
-      .group__group-name    techcamp
-      .group__message   まだメッセージがありません
+    - current_user.groups.each do |group|
+      .groups__group
+        = link_to '#' do
+          .group__group-name
+            = group.name
+          .group__message
+            まだメッセージがありません
 

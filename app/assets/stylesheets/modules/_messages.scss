@@ -49,7 +49,7 @@
     height: calc(100vh - 100px);
     padding-top: 20px;
     background-color: #2f3e51;
-    color: #ffffff;  
+ 
     .groups__group {
       margin-bottom: 40px;
     }
@@ -59,6 +59,10 @@
       }
       .group__message {
         font-size: 11px;
+    }
+    a {
+      color: #ffffff;
+      text-decoration: none;
     }
   }
 }
