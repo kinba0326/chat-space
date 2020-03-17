@@ -1,5 +1,8 @@
 .main-chat
   .main-chat__main-header
+    .main-header
+    = link_to "edit", class: "main-header__edit-btn" do
+      Edit
     -# - current_user.groups.each do |group|
     .main-header__left-box
       = link_to group_messages_path(@group) do
@@ -8,16 +11,18 @@
         .left-box__member-list
           - @group.users.each do |user|
             =user.name
-    .main-header
-      = link_to "edit", class: "main-header__edit-btn" do
-        Edit
-  .messages
-    = render @messages
-    .main-chat__message
-      .message__info 
-        .info__user-name masa
-        .info__date 2019/11/20(Wed) 17:43:34
-      .message__text 今日は夜から雨
+
+    .messages
+      = render @messages
+      .message
+        .upper-message
+          .upper-message__user-name
+            メンバー
+          .upper-message__date
+            2017/04/04
+        .lower-meesage
+          .lower-message__content
+            メッセージ
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
