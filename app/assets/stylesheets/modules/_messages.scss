@@ -72,9 +72,7 @@
   width: calc(100% - 300px);
   background-color: #ffffff;
   &__main-header {
-    display: flex;
-    padding: 0 40px;
-    justify-content: space-between;
+    box-sizing: border-box;
     height: 100px;
     background-color: #ffffff;
     border-bottom: 1px solid #eeeeee;
@@ -85,17 +83,18 @@
         color: #333333;
         font-size: 20px;
         margin-bottom: 15px;
+        margin-left: 40px;
       }
       .left-box__member-list {
         color: #999999;
         font-size: 12px;
+        margin-left: 40px;
       }
     .main-header__edit-btn {
       color: #38aef0;
       font-size: 16px;
       border: 1px solid #38aef0;
       text-decoration: none;
-      margin-top: 30px;
       height: 40px;
       line-height: 40px;
       position: absolute;
@@ -103,30 +102,40 @@
       right: 40px;
     }
   }
-  &__message {
-    height: calc(100vh - 190px);
-    background-color: #fafafa;
-    padding: 35px 40px;
-    .message__info {
-      display: flex;
-      padding: 0 0 12px 0;
-      .info__user-name {
-        color: #333333;
-        font-size: 16px;
+
+    .messages {
+    background-color: #FAFAFA;
+    box-sizing: border-box;
+    padding: 46px 40px 0;
+    height: calc(100vh - 100px - 90px);
+    overflow: scroll;
+    .message {
+      .upper-message {
+        display: flex;
+        &__user-name {
+          color: #434a54;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date {
+          color: #999;
+          font-size: 12px;
+          padding-left: 10px;
+        }
       }
-      .info__date {
-        color: #999999;
-        font-size: 12px;
-        margin: 0 0 0 5px;
+      .lower-message {
+        margin-top: 10px;
+        &__content {
+          color: #434a54;
+          font-size: 14px;
+          margin-bottom: 40px;
+        }
       }
-    }
-    .message__text {
-      color: #424A54;
-      font-size: 14px;
-      padding: 0 0 46px;
-  
     }
   }
+
+
+
   .form {
     background-color: #DDDDDD;
     box-sizing: border-box;
