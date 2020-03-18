@@ -47,7 +47,7 @@
   &__groups {
     align-items: center;
     padding: 0 20px;
-    height: calc(100vh - 100px);
+    height: 100vh;
     padding-top: 20px;
     background-color: #2f3e51;
  
@@ -110,7 +110,7 @@
     background-color: #FAFAFA;
     box-sizing: border-box;
     padding: 46px 40px 0;
-    height: calc(100vh - 100px - 90px);
+    height: calc(100vh - 100px);
     overflow: scroll;
     .message {
       .upper-message {
@@ -142,9 +142,9 @@
   .form {
     background-color: #DDDDDD;
     box-sizing: border-box;
-    height: 90px;
+    height: 100px;
     width: 100%;
-    padding: 20px 50px 20px 40px;
+    padding: 25px 40px 25px 40px;
     &__message {
       border: none;
       float: left;
