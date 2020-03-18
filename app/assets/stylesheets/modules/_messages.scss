@@ -5,11 +5,12 @@
 .wrapper {
   display: flex;
   height: 100vh;
-  
+
 }
 
 .side-bar {
   width: 300px;
+  height: 100vh;
   float: left;
   &__side-header {
     display: flex;
@@ -46,10 +47,11 @@
   } 
   &__groups {
     align-items: center;
+    height: calc(100vh - 100px);
     padding: 0 20px;
-    height: 100vh;
     padding-top: 20px;
     background-color: #2f3e51;
+    overflow: scroll;
  
     .groups__group {
       margin-bottom: 40px;
@@ -106,11 +108,11 @@
     }
   }
 
-    .messages {
+  .messages {
     background-color: #FAFAFA;
     box-sizing: border-box;
     padding: 46px 40px 0;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 100px - 90px);
     overflow: scroll;
     .message {
       .upper-message {
@@ -142,9 +144,8 @@
   .form {
     background-color: #DDDDDD;
     box-sizing: border-box;
-    height: 100px;
-    width: 100%;
-    padding: 25px 40px 25px 40px;
+    height: 92px;
+    padding: 20px 40px 20px 40px;
     &__message {
       border: none;
       float: left;
@@ -174,6 +175,11 @@
       height: 50px;
       margin-left: 15px;
       padding: 0 30px;
+    }
+    
+    a {
+      display: block; 
+      margin: 0 auto; 
     }
   }
 }
