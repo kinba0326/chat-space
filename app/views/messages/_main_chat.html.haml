@@ -8,9 +8,8 @@
       = link_to group_messages_path(@group) do
         .left-box__current-group
           = @group.name
-        .left-box__member-list
-          - @group.users.each do |user|
-            =user.name
+        .left-box_ _member-list
+           
     .messages
       = render @messages
 
@@ -21,4 +20,4 @@
           = f.label :image, class: 'form__mask__image' do
             = icon('fas', 'image', class: 'icon')
             = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
+        = f.submit 'Send', class: 'form__submit' 
